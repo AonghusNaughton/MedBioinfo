@@ -82,7 +82,7 @@ srun --cpus-per-task=8 bowtie2 -x ../data/bowtie2_DBs/SARCoV2_bowtie2_DB -U ../d
 -S bowtie/anaughton_merged2SARCoV2.sam --threads 8 --no-unal 2>&1 | tee bowtie/anaughton_bowtie_merged2SARCoV2.log
 
 srun --time=00:10:00 --cpus-per-task=2 samtools sort bowtie/anaughton_merged2SARCoV2.sam -o bowtie/anaughton_merged2SARCoV2_sorted.bam --threads 2
-srun --time=00:10:00 --cpus-per-task=2 samtools index bowtie/anaughton_merged2SARCoV2_sorted.bam --threads 2
+srun --time=00:10:00 --cpus-per-task=2 samtools index bowtie/anaughton_merged2SARCoV2_sorted.bam
 
 srun multiqc --force --title "anaughton sample sub-set" ../data/merged_pairs/ ./fastqc/ ./anaughton_flash2.log ./bowtie/
 
