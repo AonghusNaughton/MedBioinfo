@@ -1,3 +1,5 @@
 *.sra
 .ipynb_checkpoints
 data/*
+analyses/data/
+analyses/
